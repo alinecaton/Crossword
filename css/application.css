@@ -61,6 +61,10 @@ input.done {
   text-decoration: line-through;
 }
 
+#puzzle-clues {
+  margin-top: 30px;
+}
+
 #puzzle-clues li {
   font-size: 1.2em;
   margin: .3em;
