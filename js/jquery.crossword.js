@@ -1,6 +1,4 @@
-/**
-* Jesse Weisbeck's Crossword Puzzle (for all 3 people left who want to play them)
-*/
+// Jesse Weisbeck's Crossword Puzzle (for all 3 people left who want to play them)
 (function($){
   $.fn.crossword = function(entryData) {
       /*
@@ -23,7 +21,7 @@
 
       // append clues markup after puzzle wrapper div
       // This should be moved into a configuration object
-      this.after('<div id="puzzle-clues"><h2>Across</h2><ol id="across"></ol><h2>Down</h2><ol id="down"></ol></div>');
+      this.after('<div id="puzzle-clues"><h2>Across</h2><ul id="across"></ul><h2>Down</h2><ul id="down"></ul></div>');
 
       // initialize some variables
       var tbl = ['<table id="puzzle">'],
@@ -56,7 +54,7 @@
             return a.position - b.position;
           });
 
-          // Set keyup handlers for the 'entry' inputs that will be added presently
+          // Set keyup handlers for the 'entry' inputs
           puzzEl.delegate('input', 'keyup', function(e){
             mode = 'interacting';
 
@@ -94,7 +92,6 @@
               return false;
             } else {
               // console.log('input keyup: '+solvedToggle);
-
               puzInit.checkAnswer(e);
             }
 
@@ -104,21 +101,18 @@
 
           // tab navigation handler setup
           puzzEl.delegate('input', 'keydown', function(e) {
-
-            if ( e.keyCode === 9) {
+            if (e.keyCode === 9) {
 
               mode = "setting ui";
               if (solvedToggle) solvedToggle = false;
 
               //puzInit.checkAnswer(e)
               nav.updateByEntry(e);
-
             } else {
               return true;
             }
 
             e.preventDefault();
-
           });
 
           // tab navigation handler setup
@@ -181,7 +175,7 @@
             }
 
             // while we're in here, add clues to DOM!
-            $('#' + puzz.data[i].orientation).append('<li tabindex="1" data-position="' + i + '">' + puzz.data[i].clue + '</li>');
+            $('#' + puzz.data[i].orientation).append('<li tabindex="1" data-position="' + i + '">' + puzz.data[i].position + ". " + puzz.data[i].clue + '</li>');
           }
 
           // Calculate rows/cols by finding max coords of each entry, then picking the highest
@@ -287,8 +281,7 @@
             .join('');
 
           //console.log(currVal + " " + valToCheck);
-
-          if (valToCheck === currVal) {
+          if(valToCheck === currVal){
             $('.active')
               .addClass('done')
               .removeClass('active');
@@ -313,6 +306,7 @@
       var nav = {
 
         nextPrevNav: function(e, override) {
+          // console.log(e.target);
 
           var len = $actives.length,
             struck = override ? override : e.which,
@@ -328,8 +322,6 @@
           $('.current').removeClass('current');
 
           selector = '.position-' + activePosition + ' input';
-
-          //console.log('nextPrevNav activePosition & struck: '+ activePosition + ' '+struck);
 
           // move input focus/select to 'next' input
           switch(struck) {
@@ -391,10 +383,9 @@
 
           $('.active').eq(0).focus();
           $('.active').eq(0).select();
-          $('.active').eq(0).addClass('current');
 
           // store orientation for 'smart' auto-selecting next input
-          currOri = $('.clues-active').parent('ol').prop('id');
+          currOri = $('.clues-active').parent('ul').prop('id');
 
           activeClueIndex = $(clueLiEls).index(e.target);
           //console.log('updateByNav() activeClueIndex: '+activeClueIndex);
@@ -434,8 +425,9 @@
             util.highlightEntry();
             util.highlightClue();
 
-            //$actives.eq(0).addClass('current');
-            //console.log('nav.updateByEntry() reports activePosition as: '+activePosition);
+            $('.active').eq(0).focus();
+            $('.active').eq(0).select();
+
         }
 
       }; // end nav object
@@ -447,8 +439,7 @@
           $actives = $('.active');
           $actives.removeClass('active');
           $actives = $('.position-' + activePosition + ' input').addClass('active');
-          $actives.eq(0).focus();
-          $actives.eq(0).select();
+
         },
 
         highlightClue: function() {
@@ -506,7 +497,8 @@
               activePosition = classes[0].split('-')[1];
             }
 
-            // console.log('getActivePositionFromClassGroup activePosition: '+activePosition);
+            console.log('getActivePositionFromClassGroup activePosition: '+activePosition);
+
         },
 
         checkSolved: function(valToCheck) {
@@ -518,9 +510,10 @@
           }
         },
 
-        getSkips: function(position) {
-          if ($(clueLiEls[position]).hasClass('clue-done')){
-            activeClueIndex = position === clueLiEls.length-1 ? 0 : ++activeClueIndex;
+        getSkips: function(index) {
+
+          if ($(clueLiEls[index]).hasClass('clue-done')){
+            activeClueIndex = index === clueLiEls.length-1 ? 0 : ++activeClueIndex;
             util.getSkips(activeClueIndex);
           } else {
             return false;
