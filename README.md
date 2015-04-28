@@ -1,1 +1,3 @@
-# Tech Girls are Superheroes - crossword puzzle
+# Tech Girls - crossword puzzle
+
+http://www.techgirlsmovement.org/crossword-puzzle/
