@@ -10,7 +10,7 @@ table {
   max-width: 100%;
 }
 
-table tr{
+table tr {
   width: 100%;
 }
 
@@ -61,18 +61,7 @@ input.done {
   text-decoration: line-through;
 }
 
-#puzzle-wrapper {
-  float: left;
-  width: 54%;
-  margin-right: 3%;
-}
-
-#puzzle-clues {
-  float: left;
-  width: 40%;
-}
-
-#puzzle-clues li{
+#puzzle-clues li {
   font-size: 1.2em;
   margin: .3em;
   line-height: 1.6em;
