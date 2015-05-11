@@ -34,29 +34,29 @@
         startx: 1,
         starty: 5
       }, {
-        clue: 'Complex resistances',
-        answer: 'impedances',
+        clue: 'An optical instrument used for viewing very small objects',
+        answer: 'microscope',
         position: 10,
         orientation: 'across',
         startx: 2,
         starty: 7
       }, {
-        clue: 'This device is used to step-up, step-down, and/or isolate',
-        answer: 'transformer',
+        clue: ' A protocol developed by the mother of the internet, Perlman',
+        answer: 'trill',
         position: 13,
         orientation: 'across',
         startx: 1,
         starty: 9
       }, {
-        clue: 'Type of ray emitted from the sun',
-        answer: 'gamma',
+        clue: ' A picture or figure representing a person in an online environment.',
+        answer: 'avatar',
         position: 16,
         orientation: 'across',
         startx: 1,
         starty: 11
       }, {
-        clue: 'C programming language operator',
-        answer: 'cysan',
+        clue: '(PICture ELement) All computer screen or printed images are made up of pixels, small square dots - the smaller the pixels, the higher the image quality.',
+        answer: 'pixel',
         position: 17,
         orientation: 'across',
         startx: 7,
@@ -97,15 +97,15 @@
         startx: 11,
         starty: 3
       }, {
-        clue: 'Coined the term bug _____ Hopper',
-        answer: 'grace',
+        clue: 'With which kind of animal did Dian Fossey work?',
+        answer: 'gorillas',
         position: 9,
         orientation: 'down',
         startx: 5,
         starty: 5
       }, {
-        clue: 'Emits a lout wailing sound',
-        answer: 'siren',
+        clue: ' Electronic mail',
+        answer: 'email',
         position: 11,
         orientation: 'down',
         startx: 11,
@@ -118,15 +118,15 @@
         startx: 1,
         starty: 8
       }, {
-        clue: 'Asynchronous transfer mode (abbr.)',
-        answer: 'atm',
+        clue: '(Industry Standard Architecture; pr."icer") A once-common type of PC expansion card, now obsolete; see also EISA, PCI',
+        answer: 'isa',
         position: 14,
         orientation: 'down',
         startx: 3,
         starty: 9
       }, {
-        clue: 'Offset current control (abbr.)',
-        answer: 'occ',
+        clue: 'APPlication) Any software used to carry out a particular task, such as office programs or games, particularly on smartphones. Usually downloaded to the device from an online store. Essentially another word for program.',
+        answer: 'app',
         position: 15,
         orientation: 'down',
         startx: 7,
