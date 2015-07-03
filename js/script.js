@@ -141,7 +141,7 @@
         startx: 10,
         starty: 12
       }, {
-        clue: 'The brand name of poly- paraphenylene terephthalamide, developed by Stephanie Kwolek, at DuPont (6)',
+        clue: 'The brand name of poly-paraphenylene terephthalamide, developed by Stephanie Kwolek, at DuPont (6)',
         answer: 'kevlar',
         position: 19,
         orientation: 'down',
