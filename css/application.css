@@ -4,6 +4,35 @@ body {
   margin: 10px auto;
 }
 
+.main {
+  clear: left;
+  float: left;
+  width: 100%;
+}
+
+.row {
+  float: left;
+  width: 100%;
+  position: relative;
+  right: 50%;
+}
+
+.left {
+  float: left;
+  width: 46%;
+  position: relative;
+  left: 52%;
+  overflow: hidden;
+}
+
+.right {
+  float: left;
+  width: 46%;
+  position: relative;
+  left: 56%;
+  overflow: hidden;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

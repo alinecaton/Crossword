@@ -151,5 +151,8 @@
     ];
 
     $('#puzzle-wrapper').crossword(puzzleData);
-  })
+
+    var element = $('#puzzle-clues').detach();
+    $('.right').append(element);
+  });
 })(jQuery)
